@@ -10,7 +10,10 @@ package contractManagerOOP;
  * @author MC03353
  */
 public class NonBusinessCustomer implements CustomerInterface {
-
+    private String firstName, lastName, packageType, dataBundle, reference;
+    private int contractLength;
+    private boolean internationalCallsIncluded;    
+    
     //Constructor
     public NonBusinessCustomer() {
         getFirstName();
