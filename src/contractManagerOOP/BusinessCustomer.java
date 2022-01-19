@@ -10,79 +10,89 @@ package contractManagerOOP;
  * @author MC03353
  */
 public class BusinessCustomer implements CustomerInterface {
+    private String businessName, firstName, lastName, packageType, dataBundle, reference;
+    private int contractLengthMonths;
+    private boolean internationalCallsIncluded;   
     
     public BusinessCustomer(){
         
     }
     
-    @Override
+    public String getBusinessName(){
+        return businessName;
+    }
+    
+    public void setBusinessName(String businessName){
+        this.businessName = businessName;
+    }
+    
+   @Override
     public String getFirstName() {
-        return "";
+        return firstName;
     }
 
     @Override
     public void setFirstName(String name) {
-
+        this.firstName = firstName;
     }
 
     @Override
     public String getLastName() {
-        return "";
+        return lastName;
     }
 
     @Override
     public void setLastName(String lastName) {
-
+        this.lastName = lastName;
     }
 
     @Override
     public String getPackageType() {
-        return "";
+        return packageType;
     }
 
     @Override
     public void setPackageType(String packageType) {
-
+        this.packageType = packageType;
     }
 
     @Override
     public String getDataBundle() {
-        return "";
+        return dataBundle;
     }
 
     @Override
     public void setDataBundle(String dataBundle) {
-
+        this.dataBundle = dataBundle;
     }
 
     @Override
     public String getReference() {
-        return "";
+        return reference;
     }
 
     @Override
     public void setReference(String reference) {
-
+        this.reference = reference;
     }
 
     @Override
     public int getContractLength() {
-        return -1;
+        return contractLengthMonths;
     }
 
     @Override
     public void setContractLength(int contractLengthMonths) {
-
+        this.contractLengthMonths = contractLengthMonths;
     }
 
     @Override
     public boolean getInternationalCallsIncluded() {
-        return true;
+        return internationalCallsIncluded;
     }
 
     @Override
     public void setInternationalCallsIncluded(boolean internationalCallsIncluded) {
-
-    }
-    
+        this.internationalCallsIncluded = internationalCallsIncluded;
+    }    
 }
