@@ -10,14 +10,18 @@ package contractManagerOOP;
  * @author MC03353
  */
 public class ECustomerType {
-    private ECustomerType.CustomerType customerType;
+    private CustomerType customerType;
 
     public enum CustomerType {
         BUSINESS, NONBUSINESS;
     }
     
-    public String getValue() {
-        return "";
+    public void setCustomerType(CustomerType customerType){
+        this.customerType = customerType;
+    }
+    
+    public CustomerType getValue() {
+        return customerType;
     }
 
 

@@ -4,21 +4,24 @@
  * and open the template in the editor.
  */
 package contractManagerOOP;
-import static contractManagerOOP.Menu.SC;
+import static contractManagerOOP.Main.SC;
 /**
  *
  * @author MC03353
  */
 public class Contract {
-    
+    private String customerType;
     
     public Contract(){
-        System.out.print("Business or Non-Business Contract?");
-        System.out.println();
-        if(input == businessOrNonBusiness.business){
+        System.out.println("Business or non-business customer?");
+        customerType = SC.next().toUpperCase();
         
-        } else if(input == businessOrNonBusiness.nonBusiness){
-        
+        if(customerType.equalsIgnoreCase(ECustomerType.CustomerType.BUSINESS.toString())){
+            System.out.println("it worked");
+            BusinessCustomer bCustomer = new BusinessCustomer();
+        } else if(customerType.equalsIgnoreCase(ECustomerType.CustomerType.NONBUSINESS.toString())){
+            System.out.println("it worked again");
+            NonBusinessCustomer nonBCustomer = new NonBusinessCustomer();
         } else {
             System.out.println("Problem here with ENUMS");
         }

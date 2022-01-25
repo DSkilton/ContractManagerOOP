@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package contractManagerOOP;
-import static contractManagerOOP.Menu.SC;
+import static contractManagerOOP.Main.SC;
 /**
  *
  * @author MC03353
