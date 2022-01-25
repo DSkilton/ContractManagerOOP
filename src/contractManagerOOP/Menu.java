@@ -7,13 +7,15 @@ package contractManagerOOP;
 import java.util.Scanner;
 
 public class Menu {
-    private static Scanner SC = new Scanner(System.in);
-
+    protected static Scanner SC = new Scanner(System.in);
+       
+    
     public static void main(String[] args) {
         menu();
     }
-
+    
     public static void menu() {
+        
         int input = -1;
         do {
             System.out.println("Please select an option below\n"

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package contractManagerOOP;
-
+import static contractManagerOOP.Menu.SC;
 /**
  *
  * @author MC03353
@@ -16,7 +16,8 @@ public class NonBusinessCustomer implements CustomerInterface {
     
     //Constructor
     public NonBusinessCustomer() {
-        getFirstName();
+        System.out.print("Enter your first name: ");
+        setFirstName(SC.next());
         getLastName();
     }
 
@@ -82,12 +83,11 @@ public class NonBusinessCustomer implements CustomerInterface {
 
     @Override
     public boolean getInternationalCallsIncluded() {
-        return true;
+        return internationalCallsIncluded;
     }
 
     @Override
     public void setInternationalCallsIncluded(boolean internationalCallsIncluded) {
-
+        this.internationalCallsIncluded = internationalCallsIncluded;
     }
-
 }

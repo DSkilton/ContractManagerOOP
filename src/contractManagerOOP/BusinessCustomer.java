@@ -10,20 +10,21 @@ package contractManagerOOP;
  * @author MC03353
  */
 public class BusinessCustomer implements CustomerInterface {
-    private String businessName, firstName, lastName, packageType, dataBundle, reference;
+    private  String BusinessName, firstName, lastName, packageType, dataBundle, reference;
     private int contractLengthMonths;
-    private boolean internationalCallsIncluded;   
+    private boolean internationalCallsIncluded;
     
+    //constructor
     public BusinessCustomer(){
         
     }
     
     public String getBusinessName(){
-        return businessName;
+        return BusinessName;
     }
     
-    public void setBusinessName(String businessName){
-        this.businessName = businessName;
+    public void setBusinessName(String BusinessName){
+        this.BusinessName = BusinessName;
     }
     
    @Override
