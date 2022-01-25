@@ -16,7 +16,7 @@ public class Validation {
     private String input;
 
     public Boolean strValidation(String strToBeValidated) {
-        System.out.print("Is this correct? " + strToBeValidated);
+        System.out.print("Is this correct? " + strToBeValidated + " \n");
         input = SC.next();
 
         while ((!input.equalsIgnoreCase("yes")) && (!input.equalsIgnoreCase("no"))) {
