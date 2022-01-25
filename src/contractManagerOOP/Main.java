@@ -11,8 +11,12 @@ public class Main {
        
     
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.menu();
+//        Menu menu = new Menu();
+//        menu.menu();
+
+        Validation test = new Validation();
+        test.strValidation("Just a test");
+        
     }
     
 }

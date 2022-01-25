@@ -9,15 +9,10 @@ package contractManagerOOP;
  *
  * @author MC03353
  */
-public class BusinessCustomer implements CustomerInterface {
+public class BusinessCustomer extends NonBusinessCustomer implements CustomerInterface {
     private  String BusinessName, firstName, lastName, packageType, dataBundle, reference;
     private int contractLengthMonths;
     private boolean internationalCallsIncluded;
-    
-    //constructor
-    public BusinessCustomer(){
-        
-    }
     
     public String getBusinessName(){
         return BusinessName;
@@ -33,7 +28,7 @@ public class BusinessCustomer implements CustomerInterface {
     }
 
     @Override
-    public void setFirstName(String name) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 

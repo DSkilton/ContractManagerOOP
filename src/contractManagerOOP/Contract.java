@@ -17,15 +17,15 @@ public class Contract {
         customerType = SC.next().toUpperCase();
         
         if(customerType.equalsIgnoreCase(ECustomerType.CustomerType.BUSINESS.toString())){
-            System.out.println("it worked");
             BusinessCustomer bCustomer = new BusinessCustomer();
+            System.out.print("Enter business name");
+            bCustomer.setBusinessName(SC.nextLine());
         } else if(customerType.equalsIgnoreCase(ECustomerType.CustomerType.NONBUSINESS.toString())){
-            System.out.println("it worked again");
             NonBusinessCustomer nonBCustomer = new NonBusinessCustomer();
         } else {
             System.out.println("Problem here with ENUMS");
-        }
-        
+        }        
+        newContract();
     }
     
     void newContract(){
