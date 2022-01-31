@@ -10,32 +10,30 @@ import static contractManagerOOP.Main.SC;
  * @author MC03353
  */
 public class Contract {
-    private String customerType;
+    private String scannerInput;
     
     public Contract(){
         System.out.println("Business or non-business customer?");
-        customerType = SC.next().toUpperCase();
+        scannerInput = SC.next().toUpperCase();
         
-        if(customerType.equalsIgnoreCase(ECustomerType.CustomerType.BUSINESS.toString())){
-            BusinessCustomer bCustomer = new BusinessCustomer();
-            System.out.print("Enter business name");
-            bCustomer.setBusinessName(SC.nextLine());
-        } else if(customerType.equalsIgnoreCase(ECustomerType.CustomerType.NONBUSINESS.toString())){
-            NonBusinessCustomer nonBCustomer = new NonBusinessCustomer();
-        } else {
-            System.out.println("Problem here with ENUMS");
-        }        
+        //this if statement uses an ENUM to specify customer type
+        if(scannerInput.equalsIgnoreCase(ECustomerType.CustomerType.BUSINESS.toString())){
+            BusinessCustomer customerTypeObj = new BusinessCustomer();
+            System.out.print("Enter business name");    //input is stored in instance variable customerType
+            customerTypeObj.setBusinessName(SC.nextLine());   //
+            
+        } else if(scannerInput.equalsIgnoreCase(ECustomerType.CustomerType.NONBUSINESS.toString())){
+            NonBusinessCustomer customerTypeObj = new NonBusinessCustomer();
+            customerTypeObj.setFirstName(SC.nextLine());
+            
+        } 
+        
         newContract();
     }
     
     void newContract(){
-        System.out.println("Name: ");
-        System.out.println("Package: ");
-        System.out.println("Data Bundle: ");
-        System.out.println("Reference: ");
-        System.out.println("Contract Length: ");
-        System.out.println("International Class Included: ");
-       
+        
+        
     }
     
     void summaryOfContracts(){

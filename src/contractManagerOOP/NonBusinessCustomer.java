@@ -16,7 +16,7 @@ public class NonBusinessCustomer implements CustomerInterface {
     
     //Constructor
     public NonBusinessCustomer() {
-        System.out.print("Enter your first name: ");
+        
         setFirstName(SC.next());
         getLastName();
     }
@@ -28,6 +28,7 @@ public class NonBusinessCustomer implements CustomerInterface {
 
     @Override
     public void setFirstName(String name) {
+        System.out.print("Enter your first name: ");
         this.firstName = firstName;
     }
 

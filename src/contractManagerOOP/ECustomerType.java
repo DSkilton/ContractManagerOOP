@@ -16,6 +16,14 @@ public class ECustomerType {
         BUSINESS, NONBUSINESS;
     }
     
+    public static CustomerType lookup(String id) {
+        try {
+            return CustomerType.valueOf(id);
+        } catch (IllegalArgumentException e) {
+            throw new RuntimeException("Must be business or nonbusiness: " + id);
+        }
+    }
+    
     public void setCustomerType(CustomerType customerType){
         this.customerType = customerType;
     }

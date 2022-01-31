@@ -25,7 +25,7 @@ public class Validation {
             break;
         }
 
-        if (input.equalsIgnoreCase("no")) {
+        if(input.equalsIgnoreCase("no")){
             return false;
         }
         return true;
