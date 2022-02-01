@@ -10,8 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
 
 /**
  *
@@ -21,23 +19,34 @@ public class RetrieveData {
 
     String fileString = "Archive.txt";
     File fileName = new File(fileString);
+    private FileReader fileReader;
+    private BufferedReader bReader;
 
     public RetrieveData() throws FileNotFoundException {
-        FileReader fileReader = new FileReader(fileName);
-        BufferedReader bReader = new BufferedReader(fileReader);
+
     }
 
-    public String loadArchive() throws IOException {
-        String line = "";
-        try (BufferedReader in = new BufferedReader(new FileReader(fileString))) {
-            System.out.println(fileString);
-            while ((line = in.readLine()) != null) {
+    protected void loadArchive() throws IOException {
+        int iLines = 0;
+        
+        try {
+            fileReader = new FileReader(fileString);
+            bReader = new BufferedReader(fileReader);
+            while (bReader.readLine() != null) {
+                iLines++;
             }
-            System.out.println(line);
-        } catch (FileNotFoundException ex) {
+            
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to open file '" + fileString + "'");
+            
         } catch (IOException ex) {
+            System.out.println("Error reading file '" + fileString + "'");
+            
+        } finally {
+            bReader.close();
+            fileReader.close();
         }
-        return line;
+        System.out.println(iLines);
     }
 
     public File getFile() {
