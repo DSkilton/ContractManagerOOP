@@ -27,14 +27,11 @@ public class RetrieveData {
     }
 
     protected void loadArchive() throws IOException {
-        int iLines = 0;
-        
-        try {
-            fileReader = new FileReader(fileString);
-            bReader = new BufferedReader(fileReader);
-            while (bReader.readLine() != null) {
-                iLines++;
-            }
+                
+        try (BufferedReader bReader = new BufferedReader(new FileReader(fileString))){
+            bReader.lines().forEach(line -> {
+                System.out.println(line);
+            });
             
         } catch (FileNotFoundException e) {
             System.out.println("Unable to open file '" + fileString + "'");
@@ -42,11 +39,7 @@ public class RetrieveData {
         } catch (IOException ex) {
             System.out.println("Error reading file '" + fileString + "'");
             
-        } finally {
-            bReader.close();
-            fileReader.close();
         }
-        System.out.println(iLines);
     }
 
     public File getFile() {
