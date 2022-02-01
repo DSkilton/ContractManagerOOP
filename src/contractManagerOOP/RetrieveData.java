@@ -10,25 +10,27 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  *
  * @author MC03353
  */
 public class RetrieveData {
-
     String fileString = "Archive.txt";
-    File fileName = new File(fileString);
-    private FileReader fileReader;
-    private BufferedReader bReader;
+    Path fileName = Paths.get(fileString);
+    Charset ascii = Charset.forName("US-ASCII");
 
     public RetrieveData() throws FileNotFoundException {
 
     }
 
     protected void loadArchive() throws IOException {
-                
-        try (BufferedReader bReader = new BufferedReader(new FileReader(fileString))){
+        
+        try (BufferedReader bReader = Files.newBufferedReader(fileName,ascii)){
             bReader.lines().forEach(line -> {
                 System.out.println(line);
             });
@@ -36,15 +38,9 @@ public class RetrieveData {
         } catch (FileNotFoundException e) {
             System.out.println("Unable to open file '" + fileString + "'");
             
-        } catch (IOException ex) {
+        } catch (IOException e) {
             System.out.println("Error reading file '" + fileString + "'");
             
         }
     }
-
-    public File getFile() {
-
-        return fileName;
-    }
-
 }
