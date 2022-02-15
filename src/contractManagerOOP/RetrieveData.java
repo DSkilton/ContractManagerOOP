@@ -6,41 +6,53 @@
 package contractManagerOOP;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author MC03353
  */
 public class RetrieveData {
-    String fileString = "Archive.txt";
-    Path fileName = Paths.get(fileString);
-    Charset ascii = Charset.forName("US-ASCII");
+    private String fileString = "Archive.txt";
+    private Path fileName = Paths.get(fileString);
+    private Charset ascii = Charset.forName("US-ASCII");
+    private Object actuallyT;
+    List<String> list;
 
-    public RetrieveData() throws FileNotFoundException {
-
+    private RetrieveData() {
+        try {
+            loadArchive();
+        } catch (IOException ex) {
+            Logger.getLogger(RetrieveData.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    protected void loadArchive() throws IOException {
-        
-        try (BufferedReader bReader = Files.newBufferedReader(fileName,ascii)){
+    protected <T> List<T> loadArchive() throws IOException {
+
+        try (BufferedReader bReader = Files.newBufferedReader(fileName, ascii)) {
             bReader.lines().forEach(line -> {
-                System.out.println(line);
+                 list.add(line);
             });
-            
+
+//        parallelStream().filter(line -> {
+//            return line;
+//        }).forEach(System.out::println);
         } catch (FileNotFoundException e) {
             System.out.println("Unable to open file '" + fileString + "'");
-            
+
         } catch (IOException e) {
             System.out.println("Error reading file '" + fileString + "'");
-            
+
         }
+
+        return (List<T>) list;
     }
 }

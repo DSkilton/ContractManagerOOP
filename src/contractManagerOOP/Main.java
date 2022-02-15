@@ -16,11 +16,11 @@ public class Main {
     protected static Scanner SC = new Scanner(System.in);
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-            //        Menu menu = new Menu(); //creates object called menu
-            //        menu.menu();            //runs the menu method from the menu object
+                    Menu menu = new Menu(); //creates object called menu
+                    menu.menu();            //runs the menu method from the menu object
 
             RetrieveData rd = new RetrieveData();
-            rd.loadArchive();
+            rd.toString();
         
 
     }
