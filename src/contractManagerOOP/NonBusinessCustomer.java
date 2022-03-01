@@ -16,7 +16,6 @@ public class NonBusinessCustomer implements CustomerInterface {
     
     //Constructor
     public NonBusinessCustomer() {
-        
         setFirstName(SC.next());
         getLastName();
     }

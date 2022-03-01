@@ -46,5 +46,4 @@ public class Menu {
             System.out.println("Must be a number show on the menu");
         } // end of if statement
     } // end of menuOptions
-    
 }

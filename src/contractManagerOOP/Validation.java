@@ -24,7 +24,7 @@ public class Validation {
             SC.next();
             break;
         }
-
+ 
         if(input.equalsIgnoreCase("no")){
             return false;
         }

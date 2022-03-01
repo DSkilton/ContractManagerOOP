@@ -33,7 +33,6 @@ public class Contract {
     
     void newContract(){
         
-        
     }
     
     void summaryOfContracts(){

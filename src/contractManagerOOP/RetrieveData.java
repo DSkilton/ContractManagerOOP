@@ -27,7 +27,7 @@ public class RetrieveData {
     private Object actuallyT;
     List<String> list;
 
-    private RetrieveData() {
+    public RetrieveData() {
         try {
             loadArchive();
         } catch (IOException ex) {
@@ -36,7 +36,6 @@ public class RetrieveData {
     }
 
     protected <T> List<T> loadArchive() throws IOException {
-
         try (BufferedReader bReader = Files.newBufferedReader(fileName, ascii)) {
             bReader.lines().forEach(line -> {
                  list.add(line);
@@ -50,9 +49,7 @@ public class RetrieveData {
 
         } catch (IOException e) {
             System.out.println("Error reading file '" + fileString + "'");
-
         }
-
         return (List<T>) list;
     }
 }
