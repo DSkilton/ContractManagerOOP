@@ -10,19 +10,20 @@ package contractManagerOOP;
  * @author MC03353
  */
 public class BusinessCustomer extends NonBusinessCustomer implements CustomerInterface {
-    private  String BusinessName, firstName, lastName, packageType, dataBundle, reference;
+
+    private String BusinessName, firstName, lastName, packageType, dataBundle, reference;
     private int contractLengthMonths;
     private boolean internationalCallsIncluded;
-    
-    public String getBusinessName(){
+
+    public String getBusinessName() {
         return BusinessName;
     }
-    
-    public void setBusinessName(String BusinessName){
+
+    public void setBusinessName(String BusinessName) {
         this.BusinessName = BusinessName;
     }
-    
-   @Override
+
+    @Override
     public String getFirstName() {
         return firstName;
     }
@@ -90,5 +91,5 @@ public class BusinessCustomer extends NonBusinessCustomer implements CustomerInt
     @Override
     public void setInternationalCallsIncluded(boolean internationalCallsIncluded) {
         this.internationalCallsIncluded = internationalCallsIncluded;
-    }    
+    }
 }

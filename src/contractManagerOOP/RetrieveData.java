@@ -31,7 +31,7 @@ public class RetrieveData {
         try {
             loadArchive();
         } catch (IOException ex) {
-            Logger.getLogger(RetrieveData.class.getName()).log(Level.SEVERE, null, ex);
+            ex.getMessage();
         }
     }
 
