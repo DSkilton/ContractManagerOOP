@@ -5,9 +5,7 @@
  */
 package contractManagerOOP;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -18,10 +16,11 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException {  
 //        Menu menu = new Menu(); //creates object called menu
 //        menu.menu();          //runs the menu method from the menu object
-        SaveData sd = new SaveData();
-//        sd.loadFileIntoList();
+        writeData sd = new writeData();
         
-        sd.countColumns();
+        System.out.print(sd.loadFileIntoList() + "\n");
+        
+        
     }
 
     
