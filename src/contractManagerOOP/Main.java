@@ -19,9 +19,9 @@ public class Main {
 //        Menu menu = new Menu(); //creates object called menu
 //        menu.menu();          //runs the menu method from the menu object
         SaveData sd = new SaveData();
-        sd.loadFileIntoList();
+//        sd.loadFileIntoList();
         
-        
+        sd.countColumns();
     }
 
     
