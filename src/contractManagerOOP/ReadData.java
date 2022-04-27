@@ -53,20 +53,16 @@ public class ReadData {
 
     public LinkedList<String> loadFileIntoList() throws IOException {
         eachLine = new LinkedList<String>();
-        String currentLine;
 
         try (BufferedReader brf = Files.newBufferedReader(filePath, ascii)){
             brf.lines().forEach(line -> {
-                eachLine.add("\n" + line);
+                eachLine.add(line);
             });
-            
-//            while ((currentLine = br.readLine()) != null) {
-//                String column[] = currentLine.split("\\t");
-//                
-//                
-//                eachLine.add("\n" + column[0] + " " + column[1] + " " + column[2] + " " + column[3] + " " + column[4]
-//                        + " " + column[5] + " " + column[6] + " " + column[7]);
-//            }
+
+//        parallelStream().filter(line -> {
+//            return line;
+//        }).forEach(System.out::println);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
