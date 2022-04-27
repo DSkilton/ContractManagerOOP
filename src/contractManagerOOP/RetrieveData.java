@@ -21,6 +21,7 @@ import java.util.logging.Logger;
  * @author MC03353
  */
 public class RetrieveData {
+
     private String fileString = "Archive.txt";
     private Path fileName = Paths.get(fileString);
     private Charset ascii = Charset.forName("US-ASCII");
@@ -36,9 +37,9 @@ public class RetrieveData {
     }
 
     protected <T> List<T> loadArchive() throws IOException {
-        try (BufferedReader bReader = Files.newBufferedReader(fileName, ascii)) {
+        try ( BufferedReader bReader = Files.newBufferedReader(fileName, ascii)) {
             bReader.lines().forEach(line -> {
-                 list.add(line);
+                list.add(line);
             });
 
 //        parallelStream().filter(line -> {

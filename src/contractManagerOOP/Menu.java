@@ -14,11 +14,11 @@ public class Menu {
     public void menu() {
         int input = -1;
         do {
-            System.out.println("Please select an option below\n" 
-                    + "1. Enter new contract\n" 
-                    + "2. Display summary of contracts\n" 
-                    + "3. Display summary of contracts for selected month\n" 
-                    + "4. Find and display contract \n" 
+            System.out.println("Please select an option below\n"
+                    + "1. Enter new contract\n"
+                    + "2. Display summary of contracts\n"
+                    + "3. Display summary of contracts for selected month\n"
+                    + "4. Find and display contract \n"
                     + "0. Exit");
             while (!Main.SC.hasNextInt()) {
                 System.out.println("must be an integer");

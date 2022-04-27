@@ -4,16 +4,19 @@
  * and open the template in the editor.
  */
 package contractManagerOOP;
+
 import static contractManagerOOP.Main.SC;
+
 /**
  *
  * @author MC03353
  */
 public class NonBusinessCustomer implements CustomerInterface {
+
     private String firstName, lastName, packageType, dataBundle, reference;
     private int contractLengthMonths;
-    private boolean internationalCallsIncluded;    
-    
+    private boolean internationalCallsIncluded;
+
     //Constructor
     public NonBusinessCustomer() {
         setFirstName(SC.next());
