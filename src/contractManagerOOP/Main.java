@@ -17,9 +17,10 @@ public class Main {
 //        Menu menu = new Menu(); //creates object called menu
 //        menu.menu();          //runs the menu method from the menu object
         ReadData sd = new ReadData();
-
         System.out.print(sd.loadFileIntoList() + "\n");
         
+        WriteData wd = new WriteData();
+        wd.saveToTxtFile();
 
     }
 
