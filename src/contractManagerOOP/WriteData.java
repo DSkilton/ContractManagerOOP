@@ -16,17 +16,18 @@ import java.nio.file.Paths;
  */
 public class WriteData {
     private String fileName = "contracts.txt";
-    private Path filePath = Paths.get(fileName);
-    
+//    private Path filePath = Paths.get(fileName);
     
     public void saveToTxtFile() throws IOException{
         String example = "example";
         
-        try(FileWriter fw = new FileWriter(fileName); 
-            BufferedWriter bw = new BufferedWriter(fw)){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, true))){
             bw.write("string literal example \n");
             bw.write(example + "\n");
+            bw.write("this current line");
+            bw.newLine();
+            bw.write("now we are on the new line \n");
+            bw.write("cam");
         }
     }
-
 }

@@ -1,2 +1,5 @@
 string literal example 
 example
+this current line
+now we are on the new line 
+cam
