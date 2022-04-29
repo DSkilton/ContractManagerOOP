@@ -18,16 +18,14 @@ public class WriteData {
     private String fileName = "contracts.txt";
 //    private Path filePath = Paths.get(fileName);
     
-    public void saveToTxtFile() throws IOException{
-        String example = "example";
-        
+    public String dataToWrite(){
+        String dataToBeWritten = " ";
+        return dataToBeWritten;
+    }
+    
+    public void saveToTxtFile() throws IOException{       
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, true))){
-            bw.write("string literal example \n");
-            bw.write(example + "\n");
-            bw.write("this current line");
-            bw.newLine();
-            bw.write("now we are on the new line \n");
-            bw.write("cam");
+            bw.write(dataToWrite());
         }
     }
 }
