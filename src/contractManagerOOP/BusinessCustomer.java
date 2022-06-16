@@ -11,10 +11,10 @@ package contractManagerOOP;
  */
 public class BusinessCustomer extends NonBusinessCustomer implements CustomerInterface {
 
-    private String BusinessName, firstName, lastName, packageType, dataBundle, reference;
+    private String BusinessName, instanceFirstName, lastName, packageType, dataBundle, reference;
     private int contractLengthMonths;
     private boolean internationalCallsIncluded;
-
+    
     public String getBusinessName() {
         return BusinessName;
     }
@@ -25,12 +25,12 @@ public class BusinessCustomer extends NonBusinessCustomer implements CustomerInt
 
     @Override
     public String getFirstName() {
-        return firstName;
+        return instanceFirstName;
     }
 
     @Override
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.instanceFirstName = firstName;
     }
 
     @Override

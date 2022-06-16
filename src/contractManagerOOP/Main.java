@@ -14,14 +14,19 @@ public class Main {
     protected static Scanner SC = new Scanner(System.in);
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-//        Menu menu = new Menu(); //creates object called menu
-//        menu.menu();          //runs the menu method from the menu object
-        ReadData sd = new ReadData();
-        System.out.print(sd.loadFileIntoList() + "\n");
-        
-        WriteData wd = new WriteData();
-        wd.saveToTxtFile();
+       java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Example().setVisible(true);
+            }
+        });
+
+//        Menu menuObject = new Menu(); //creates object called menu
+//        
+//        ReadData sd = new ReadData();
+//        System.out.print(sd.loadFileIntoList() + "\n");
+//        
+//        WriteData wd = new WriteData();
+//        wd.saveToTxtFile();
 
     }
-
 }
