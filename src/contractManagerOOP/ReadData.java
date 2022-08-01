@@ -13,7 +13,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -30,6 +32,10 @@ public class ReadData {
     public ReadData() throws FileNotFoundException {
         br = new BufferedReader(new FileReader(fileName));
     }
+    
+    public <T> List<T> getList(){
+        return new ArrayList<T>();
+    }
 
     public void checkFileExists(String fileName) throws IOException {
         File f = new File(fileName);
@@ -43,7 +49,6 @@ public class ReadData {
 
     public int countColumns() throws IOException {
         int columns = 0;
-
         String[] firstLine = br.readLine().split("\\t");
         columns = firstLine.length;
 
